@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="/src/globals.css" />
+  <script type="module" src="/src/main.tsx" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeffrey Yan | Portfolio</title>
+</head>
+
+<body class="text-eerie_black-200 bg-timberwolf-500">
+  <div class="absolute w-full max-w-[1600px] top-0 left-0 -z-20">
+    <svg class="fill-myrtle_green-700 w-full" preserveAspectRatio="xMidYMin slice" viewBox="23 33 200 200">
+      <path
+        d="M 22.111944,32.770221 V 228.90706 c 0,0 29.314355,-4.21908 50.109801,-28.14969 20.795446,-23.93061 8.936128,-46.26913 27.679694,-69.19925 18.743571,-22.93012 35.828651,-9.41186 56.632031,-33.406552 20.80338,-23.994687 2.99771,-44.001337 31.17943,-65.381347 z" />
+    </svg>
+  </div>
+  <main class="flex flex-col justify-between relative min-h-screen pt-8 px-6 md:px-18 lg:px-24">
+    <div class="grow max-w-screen-2xl mx-auto">
+      <section class="flex flex-col items-center gap-24 w-full">
+        <nav class="flex w-full min-w-max gap-10 lg:gap-12 items-center justify-between">
+          <div id="hamburger-menu" class="w-full"></div>
+        </nav>
+        <div id="home"
+          class="flex flex-col justify-center items-center xl:flex-row w-full max-w-screen-lg gap-16 lg:gap-8 pb-16 xl:pb-36">
+          <div class="relative shrink-0 w-[200px] h-[200px] lg:w-[300px] lg:h-[300px] xl:w-[400px] xl:h-[400px] -z-10">
+            <Image class="rounded-full" src="public/portrait.png" fill={true} priority />
+          </div>
+          <div
+            class="flex flex-col relative tracking-wider text-center px-10 xl:text-left xl:ps-24 xl:pt-24 xl:pb-12 xl:pe-0 xl:-left-[8%] xl:top-8 xl:border-s-2 xl:items-start">
+            <p class="text-3xl xl:text-4xl font-semibold opacity-80 text-old_gold-100">
+              Jeffrey Yan
+            </p>
+            <p class="text-5xl xl:text-6xl font-medium text-old_gold-100 leading-normal lg:whit lg:leading-relaxed
+                pt-8 lg:pt-6 pb-2 lg:pb-0 xl:pb-4 ${domine.class}">
+              Software Engineer
+            </p>
+            <p class="text-base font-medium opacity-80">
+              Passionate web developer with a diverse background. Actively seeking opportunities to learn
+              and expand my skillset. I am determined to apply my knowledge toward building solutions that
+              have a positive impact on the world.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="mb-8">
+        <h1 class="xl:text-4xl opacity-80 text-old_gold-100">About</h1>
+        <p>
+          I am a graduate from UC Davis with a B.S. in Electrical Engineering. Since entering the workforce,
+          I've enjoyed many opportunities to work in more software focused roles. My early projects involved
+          native C++, Java, and .NET application development. I soon after took an interest in web development,
+          and endeavored to learn all I could about this exciting field. I've gained proficiency in many of
+          today's popular web technologies, and have applied these skills both on the job, and in independent
+          projects. I'm self-motivated, but also a team player, and I look forward to sharing my work and
+          learning from others with the same passion.
+        </p>
+      </section>
+      <section id="projects" class="mb-8">
+        <h1 class="xl:text-4xl opacity-80 text-old_gold-100">Projects</h1>
+        <div class="flex flex-col 2xl:flex-row my-8 gap-8">
+          <div
+            class="flex flex-col-reverse items-center 2xl:flex-row-reverse gap-12 rounded-lg shadow-lg bg-timberwolf-800 p-4 2xl:p-12">
+            <div class="w-full lg:grow self-start">
+              <div class="flex flex-col">
+                <h3 class="text-myrtle_green-200">Music Blog</h3>
+                <p>Full stack Next.js blog for sharing mixtapes.</p>
+                <p>
+                  Supports user authentication with OAuth, and uses role-based access control to
+                  restrict features to certain users. Connects to a Postgres database to hold user
+                  and blog post data. AWS S3 integration for storage of blog images and music
+                  files.
+                </p>
+                <div class="flex justify-center 2xl:justify-normal my-4 gap-2">
+                  <Link href="https://github.com/jeff2266/this-weeks-heartbreak-blog" target="_blank"
+                    rel="noopener noreferrer"
+                    class="rounded-full text-sm px-3 py-2 bg-myrtle_green-600 text-timberwolf-800 transition-opacity hover:opacity-80 cursor-pointer min-w-max">
+                  <div class="flex gap-2">
+                    <Image src={github} alt="github" width={16} />
+                    <span>Source Code</span>
+                  </div>
+                  </Link>
+                  <Link href="https://thisweeksheartbreak.com" target="_blank" rel="noopener noreferrer"
+                    class="rounded-full text-sm px-4 py-2 bg-myrtle_green-600 text-timberwolf-800 transition-opacity hover:opacity-80 cursor-pointer min-w-max">
+                  <div class="flex gap-2">
+                    <Image src={link} alt="github" width={16} />
+                    <span>Live Demo</span>
+                  </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div class="relative w-fit">
+              <div id="carousel-thisweeksheartbreak" class="w-[225px] h-[300px]"></div>
+            </div>
+          </div>
+          <div
+            class="flex flex-col-reverse items-center 2xl:flex-row-reverse gap-12 rounded-lg shadow-lg bg-timberwolf-800 p-4 2xl:p-12">
+            <div class="w-full lg:grow self-start">
+              <h3 class="text-myrtle_green-200">Station Agent Web Application</h3>
+              <p>
+                Web application used by transit station agents to control and monitor statuses of
+                fare gates and vendor equipment.
+              </p>
+              <p>
+                Follows a React SPA frontend with RESTful backend architecture. Uses server-sent
+                events for pushing status messages informing clients of current fare equipment state,
+                and Bootstrap for UI elements and styling.
+              </p>
+            </div>
+            <div id="carousel-sat" class="flex-shrink-0 w-[250px] h-[300px]"></div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="mb-8">
+        <h1 class="xl:text-4xl opacity-80 text-old_gold-100">Contact</h1>
+        <h3 class="text-myrtle_green-200">Email</h3>
+        <a class="flex gap-2 group transition-opacity hover:opacity-70 max-w-fit" href="mailto:jeff2266@gmail.com">
+          <Image src={envelope} alt="mail" width={20} />
+          <span>jeff2266@gmail.com</span>
+        </a>
+      </section>
+    </div>
+    <footer
+      class="bottom-0 py-2 w-full max-w-screen-2xl mx-auto text-sm font-light text-timberwolf-800 before:absolute before:-z-10 before:left-0 before:bg-timberwolf-100 before:w-full before:h-8">
+      Copyright © 2023. All rights are reserved
+    </footer>
+  </main>
+</body>
+
+</html>
+<html lang="en">
+
+
+
+</html>
