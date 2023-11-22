@@ -12,9 +12,9 @@ export default function HamburgerMenu() {
 						}`}>
 						<span className="flex border-timberwolf-800 items-center py-[0.5rem]">
 							<button
-								className="relative w-6 h-6 group transition-opacity hover:opacity-70"
+								className="text-center w-6 h-6 group transition-opacity hover:opacity-70"
 								onClick={() => setIsExpanded(false)}>
-								<img src="cancel.svg" alt="menu" />
+								<img className="object-contain" src="cancel.svg" alt="menu" />
 							</button>
 						</span>
 						<a
@@ -61,9 +61,9 @@ export default function HamburgerMenu() {
 					{!isExpanded && (
 						<span className="flex border-timberwolf-800 border-b-[1px] items-center py-[0.5rem]">
 							<button
-								className="relative w-6 h-6 group transition-opacity hover:opacity-70"
+								className="text-center relative w-6 h-6 group transition-opacity hover:opacity-70"
 								onClick={() => setIsExpanded(true)}>
-								<img src="hamburger.svg" alt="menu" />
+								<img className="object-contain" src="hamburger.svg" alt="menu" />
 							</button>
 						</span>
 					)}
