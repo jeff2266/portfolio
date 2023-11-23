@@ -2,13 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    @font-face {
+        font-family: Hanken Grotesk;
+        src: url(assets/HankenGrotesk-VariableFont_wght.ttf) format("woff")
+    }
+    @font-face {
+        font-family: Lora;
+        src: url(assets/Lora-VariableFont_wght.ttf) format("woff")
+    }
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Hanken Grotesk', sans-serif;
 }
 
 h1 {
