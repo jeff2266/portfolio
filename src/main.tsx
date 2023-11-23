@@ -17,6 +17,6 @@ ReactDOM.createRoot(document.getElementById('carousel-thisweeksheartbreak')!).re
 
 ReactDOM.createRoot(document.getElementById('carousel-sat')!).render(
 	<React.StrictMode>
-		<Carousel images={['parts-status-sort.gif', 'right-click-multiple.gif']} />
+		<Carousel images={['right-click-multiple.gif']} />
 	</React.StrictMode>
 )

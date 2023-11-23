@@ -1,10 +1,14 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 
 export default function Carousel({ images }: { images: string[] }) {
+	const [scrollIdx, setScrollIdx] = useState(0)
 	const scrollRef = useRef<HTMLDivElement | null>(null)
+
 	return (
-		<div className="relative h-full rounded-lg overflow-hidden">
-			<div ref={scrollRef} className="h-full flex overflow-x-auto scroll-smooth no-scrollbar">
+		<div className="relative grid h-full rounded-lg overflow-hidden">
+			<div
+				ref={scrollRef}
+				className="row-start-1 col-start-1 h-full flex items-center overflow-x-auto snap-mandatory snap-x scroll-smooth no-scrollbar overflow-y-hidden">
 				{images.map((img, idx) => (
 					<div
 						id={`${img.split('/').pop()}-${idx}`}
@@ -15,18 +19,19 @@ export default function Carousel({ images }: { images: string[] }) {
 				))}
 			</div>
 			{images.length > 1 && (
-				<>
-					<div className="absolute w-full bottom-0 py-2 flex justify-center gap-1 text-timberwolf-800 z-10 after:absolute after:w-full after:h-full after:filter after:backdrop-blur-md after:bg-timberwolf-100/30">
+				<div className="relative grid items-end row-start-1 col-start-1 w-full h-full">
+					<div className="py-1 flex justify-center gap-1 z-10 after:absolute after:bottom-0 after:w-full after:h-4 after:filter after:backdrop-blur-md after:bg-timberwolf-100/30">
 						{images.map((img, idx) => (
 							<button
 								key={`${img}-${idx}`}
-								className="w-2 h-2 bg-opacity-80 transition-opacity hover:bg-opacity-20 bg-timberwolf-800 rounded-full z-20"
+								className={`w-2 h-2 bg-opacity-80 transition-opacity hover:bg-opacity-20 bg-timberwolf-800 rounded-full z-20 ${scrollIdx === idx ? 'bg-opacity-20' : ''}`}
 								onClick={() => {
 									scrollRef.current?.scrollTo(idx * scrollRef.current.clientWidth, 0)
+									setScrollIdx(idx)
 								}}></button>
 						))}
 					</div>
-				</>
+				</div>
 			)}
 		</div>
 	)
