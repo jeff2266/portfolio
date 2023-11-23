@@ -19,7 +19,7 @@ export default function Carousel({ images }: { images: string[] }) {
 					<div className="absolute w-full bottom-0 py-2 flex justify-center gap-1 text-timberwolf-800 z-10 after:absolute after:w-full after:h-full after:filter after:backdrop-blur-md after:bg-timberwolf-100/30">
 						{images.map((img, idx) => (
 							<button
-								key={idx}
+								key={`${img}-${idx}`}
 								className="w-2 h-2 bg-opacity-80 transition-opacity hover:bg-opacity-20 bg-timberwolf-800 rounded-full z-20"
 								onClick={() => {
 									scrollRef.current?.scrollTo(idx * scrollRef.current.clientWidth, 0)
