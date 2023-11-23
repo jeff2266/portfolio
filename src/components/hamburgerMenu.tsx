@@ -56,6 +56,13 @@ export default function HamburgerMenu() {
 								rel="noopener noreferrer">
 								<img className="opacity-70 w-6 lg:w-8" src="github.svg" alt="github" />
 							</a>
+							<a
+								className="group transition-opacity hover:opacity-70"
+								href="https://www.frontendmentor.io/profile/jeff2266"
+								target="_blank"
+								rel="noopener noreferrer">
+								<img className="opacity-70 w-6 lg:w-8" src="frontendmentor.svg" alt="frontend mentor" />
+							</a>
 						</div>
 					</div>
 					{!isExpanded && (
@@ -100,6 +107,13 @@ export default function HamburgerMenu() {
 					target="_blank"
 					rel="noopener noreferrer">
 					<img className="opacity-70 w-6 lg:w-8" src="github.svg" alt="github" />
+				</a>
+				<a
+					className="group transition-opacity hover:opacity-70"
+					href="https://www.frontendmentor.io/profile/jeff2266"
+					target="_blank"
+					rel="noopener noreferrer">
+					<img className="opacity-70 w-6 lg:w-8" src="frontendmentor.svg" alt="frontend mentor" />
 				</a>
 			</div>
 		</>

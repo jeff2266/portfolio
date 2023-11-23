@@ -9,8 +9,8 @@ export default function Carousel({ images }: { images: string[] }) {
 					<div
 						id={`${img.split('/').pop()}-${idx}`}
 						key={idx}
-						className="relative w-full grow shrink-0 basis-full">
-						<img src={img} alt="carousel image" style={{ objectFit: 'contain' }} />
+						className="snap-start relative w-full grow shrink-0 basis-full">
+						<img className="object-contain" src={img} alt="carousel image" />
 					</div>
 				))}
 			</div>
