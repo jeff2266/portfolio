@@ -24,7 +24,9 @@ export default function Carousel({ images }: { images: string[] }) {
 						{images.map((img, idx) => (
 							<button
 								key={`${img}-${idx}`}
-								className={`w-2 h-2 bg-opacity-80 transition-opacity hover:bg-opacity-20 bg-timberwolf-800 rounded-full z-20 ${scrollIdx === idx ? 'bg-opacity-20' : ''}`}
+								className={`w-2 h-2 transition-opacity hover:bg-opacity-20 bg-timberwolf-800 rounded-full z-20 ${
+									scrollIdx === idx ? 'bg-opacity-20' : 'bg-opacity-80'
+								}`}
 								onClick={() => {
 									scrollRef.current?.scrollTo(idx * scrollRef.current.clientWidth, 0)
 									setScrollIdx(idx)
